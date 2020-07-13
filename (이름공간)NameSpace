@@ -1,0 +1,30 @@
+#include <iostream>
+namespace fun1//이름공간 정의
+{
+	void SimpleFunc(void)//이름공간 내 함수 정의
+	{
+		std::cout<<"fun1에 정의한 함수!"<<std::endl; 
+	}
+}
+
+namespace fun2
+{
+	void SimpleFunc(void)//이름이 같은 함수여도 이름공간이 다르므로 문제x
+	{
+		std::cout<<"fun2에 정의한 함수!!"<<std::endl;
+	}
+}
+
+namespace fun3
+{
+	SimpleFunc(){
+		std::cout<<"fun3에 정의한 함수!!!"<<std::endl;
+	}
+}
+
+int main()
+{
+	fun1::SimpleFunc();//이름공간::함수명
+	fun2::SimpleFunc();
+	fun3::SimpleFunc();
+}
